@@ -1,29 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <title>Recherche de photos Flickr</title>
-    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/hot-sneaks/jquery-ui.css" />
-    <link href="bootstrap/css/ajout.css" rel="stylesheet">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
-  </head>
-  <body background="back.png">
-    <h1>Recherche de photos Flickr</h1>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recherche de photos Flickr</title>
+  <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/hot-sneaks/jquery-ui.css" />
+  <link href="bootstrap/css/ajout.css" rel="stylesheet">
 
-    <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Veuillez entrer le nom de la ville (minimum 3 caractères)</label>
-      <br/>
-      <input type="text-area" class="form-control" id="ville" placeholder="Nom de ville">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+      ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+  
+</head>
+<body background="back.png">
+  <h1>Recherche de photos Flickr</h1>
+
+
+  <form>
+
+    <div class="ui-widget">
+      <label for="tags">Veuillez entrer le nom de la ville: </label>
+      <input type="text-area" class="form-control" id="tags" placeholder="Nom de ville">
     </div>
-    
+    <fieldset>
+      <input type="range" name ="d" type="range" value="1" max="10" min="1" step="1" oninput="result1.value=parseInt(d.value)"/><br/>
+      <output name="result1">--</output><br/>
+    </fieldset>
 
-    <button type="submit">Envoyer</button>
-<span id="ic_envoi"class="ui-icon-circle-arrow-e ui-corner-all ui-icon ui-icon-background ui-icon-blank"></span> 
+    <button type="submit" id="envoi">Envoyer</button>
+    <span id="ic_envoi"class="ui-icon-circle-arrow-e ui-corner-all ui-icon ui-icon-background ui-icon-blank"></span>
   </form>
-    <script src="bootstrap/js/script.js"></script>
+    <script src="bootstrap/js/script.js">
+    </script>
 
 
-  </body>
+
+</body>
 </html>
