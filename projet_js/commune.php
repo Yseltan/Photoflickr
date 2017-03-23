@@ -2,7 +2,6 @@
 header('Content-type: application/json');
 header("Access-Control-Allow-Origin: *");
 class AutoCompletionCPVille {
-	public $CP;
 	public $Ville;
 }
 
@@ -22,7 +21,7 @@ catch (Exception $ex)
     echo $ex->getMessage();
 }
 //Construction de la requete
-$strQuery = "SELECT DISTINCT VILLE Ville,CP FROM cp_autocomplete WHERE ";
+$strQuery = "SELECT DISTINCT VILLE Ville FROM cp_autocomplete WHERE ";
 if (isset($_GET["commune"]))
 {
     $strQuery .= "VILLE LIKE :ville ";
